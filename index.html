@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BIRTOLL & CO — Премиальные органические продукты для здоровья, энергии и баланса каждый день.">
+  <title>BIRTOLL & CO — Natural Wellness</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Compiled CSS (scss/style.scss → css/style.css) -->
+  <link rel="stylesheet" href="scss/style.css">
+</head>
+<body>
+
+  <!-- ================================================
+       TOP BAR
+  ================================================= -->
+  <div class="top-bar" role="complementary" aria-label="Информация о доставке">
+    <div class="top-bar__container">
+      <ul class="top-bar__list">
+
+        <li class="top-bar__item">
+          <!-- Delivery truck icon -->
+          <svg class="top-bar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.75"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="1" y="3" width="15" height="13" rx="2"/>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+          Доставка по Европе
+        </li>
+
+        <li class="top-bar__item">
+          <!-- Gift/tag icon -->
+          <svg class="top-bar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.75"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 12 20 22 4 22 4 12"/>
+            <rect x="2" y="7" width="20" height="5" rx="1"/>
+            <line x1="12" y1="22" x2="12" y2="7"/>
+            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+          </svg>
+          Бесплатная доставка от 50€
+        </li>
+
+        <li class="top-bar__item">
+          <!-- Leaf icon -->
+          <svg class="top-bar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.75"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2 22c2-8 6-12 10-14 4-2 8-2 10-6 0 8-4 14-10 18-4 1.5-8 2-10 2z"/>
+            <path d="M12 20C10 14 8 10 2 22"/>
+          </svg>
+          100% натуральные продукты
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ================================================
+       HEADER
+  ================================================= -->
+  <header class="header" id="header">
+    <div class="header__container">
+
+      <!-- Logo -->
+      <a href="/" class="header__logo logo" aria-label="BIRTOLL & CO — На главную">
+        <img src="images/icons-svg/main-logo.png" alt="BIRTOLL & CO" class="logo__img">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="header__nav nav" id="desktopNav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#" class="nav__link">Магазин</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Категории</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">О нас</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Блог</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header__actions">
+
+        <!-- Search -->
+        <div class="header__search-wrap">
+          <button class="header__icon-btn header__icon-btn--desktop-only" id="searchBtn" aria-label="Поиск" aria-expanded="false" aria-controls="searchModal">
+            <img src="images/icons-svg/magnifying-glass.svg" alt="">
+          </button>
+
+          <!-- Search Modal -->
+          <div class="search-modal" id="searchModal" role="dialog" aria-label="Поиск по сайту" aria-hidden="true">
+            <!-- Search Input Row -->
+            <div class="search-modal__input-row">
+              <svg class="search-modal__input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input type="text" class="search-modal__input" id="searchInput" placeholder="Я ищу..." aria-label="Поиск товаров" autocomplete="off">
+              <button class="search-modal__submit" id="searchSubmit" type="button">Найти</button>
+            </div>
+
+            <!-- History -->
+            <div class="search-modal__history" id="searchHistory">
+              <div class="search-modal__section-head">
+                <span class="search-modal__section-title">История поиска</span>
+                <button class="search-modal__clear" id="searchClearAll" type="button">Очистить</button>
+              </div>
+              <ul class="search-modal__history-list" id="searchHistoryList"></ul>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="search-modal__recs">
+              <span class="search-modal__section-title">Мы рекомендуем:</span>
+              <div class="search-modal__rec-cards">
+
+                <a href="#" class="search-rec-card">
+                  <div class="search-rec-card__img">
+                    <img src="images/popular-mushrooms-coffee.png" alt="Mushroom Coffee">
+                  </div>
+                  <div class="search-rec-card__body">
+                    <span class="search-rec-card__name">Mushroom Coffee</span>
+                    <span class="search-rec-card__sub">Chaga &amp; Lion's Mane</span>
+                    <span class="search-rec-card__price">€24.90</span>
+                  </div>
+                </a>
+
+                <a href="#" class="search-rec-card">
+                  <div class="search-rec-card__img">
+                    <img src="images/popular-matcha-latte.png" alt="Matcha Latte">
+                  </div>
+                  <div class="search-rec-card__body">
+                    <span class="search-rec-card__name">Matcha Latte</span>
+                    <span class="search-rec-card__sub">Premium Grade</span>
+                    <span class="search-rec-card__price">€19.90</span>
+                  </div>
+                </a>
+
+                <a href="#" class="search-rec-card">
+                  <div class="search-rec-card__img">
+                    <img src="images/popular-ashwagahnda.png" alt="Ashwagandha Powder">
+                  </div>
+                  <div class="search-rec-card__body">
+                    <span class="search-rec-card__name">Ashwagandha Powder</span>
+                    <span class="search-rec-card__sub">Adaptogenic</span>
+                    <span class="search-rec-card__price">€16.90</span>
+                  </div>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile -->
+        <button class="header__icon-btn header__icon-btn--desktop-only" id="profileBtn" aria-label="Личный кабинет" aria-expanded="false">
+          <img src="images/icons-svg/profile.svg" alt="">
+        </button>
+
+        <!-- Wishlist -->
+        <button class="header__icon-btn header__icon-btn--desktop-only" aria-label="Список желаний">
+          <img src="images/icons-svg/wishlist.svg" alt="">
+        </button>
+
+        <!-- Cart -->
+        <button class="header__icon-btn header__cart" id="cartBtn" aria-label="Корзина, 0 товаров">
+          <img src="images/icons-svg/cart.svg" alt="">
+          <span class="header__cart-badge" id="cartBadge">0</span>
+        </button>
+
+        <!-- Hamburger -->
+        <button class="header__hamburger hamburger" id="hamburger"
+                aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ================================================
+       MOBILE MENU
+  ================================================= -->
+  <div class="mobile-menu" id="mobileMenu"
+       role="dialog" aria-label="Навигация" aria-modal="true">
+    <nav aria-label="Мобильная навигация">
+      <ul class="mobile-menu__list">
+        <li><a href="#" class="mobile-menu__link">Магазин</a></li>
+        <li><a href="#" class="mobile-menu__link">Категории</a></li>
+        <li><a href="#" class="mobile-menu__link">О нас</a></li>
+        <li><a href="#" class="mobile-menu__link">Блог</a></li>
+        <li><a href="#" class="mobile-menu__link">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu__footer">
+      <div class="mobile-menu__icons">
+        <button class="header__icon-btn" aria-label="Поиск">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+        <button class="header__icon-btn" aria-label="Личный кабинет">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </button>
+        <button class="header__icon-btn" aria-label="Список желаний">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06
+                     a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78
+                     1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Backdrop -->
+  <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" aria-hidden="true"></div>
+
+  <!-- ================================================
+       PROFILE MODAL
+  ================================================= -->
+  <div class="auth-overlay" id="authOverlay" aria-hidden="true">
+    <div class="auth-modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+
+      <!-- Header -->
+      <div class="auth-modal__head">
+        <div class="auth-modal__tabs">
+          <button class="auth-modal__tab auth-modal__tab--active" id="tabLogin" type="button">Вход</button>
+          <button class="auth-modal__tab" id="tabRegister" type="button">Регистрация</button>
+        </div>
+        <button class="auth-modal__close" id="authClose" aria-label="Закрыть" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Form -->
+      <form class="auth-modal__form" id="authForm" onsubmit="return false;" novalidate>
+
+        <!-- Login panel -->
+        <div class="auth-modal__panel auth-modal__panel--active" id="panelLogin">
+
+          <label class="auth-modal__field">
+            <span class="auth-modal__label">Ваш e-mail</span>
+            <input class="auth-modal__input" type="email" placeholder="example@email.com" autocomplete="email">
+          </label>
+
+          <label class="auth-modal__field">
+            <span class="auth-modal__label">Введите пароль</span>
+            <input class="auth-modal__input" type="password" placeholder="••••••••" autocomplete="current-password">
+          </label>
+
+          <a href="#" class="auth-modal__forgot">Забыли пароль?</a>
+
+        </div>
+
+        <!-- Register panel -->
+        <div class="auth-modal__panel" id="panelRegister">
+
+          <label class="auth-modal__field">
+            <span class="auth-modal__label">Ваш e-mail <span class="auth-modal__required">*</span></span>
+            <input class="auth-modal__input" type="email" placeholder="example@email.com" autocomplete="email">
+          </label>
+
+          <label class="auth-modal__field">
+            <span class="auth-modal__label">Пароль <span class="auth-modal__required">*</span></span>
+            <input class="auth-modal__input" type="password" placeholder="••••••••" autocomplete="new-password">
+          </label>
+
+          <label class="auth-modal__field">
+            <span class="auth-modal__label">Повторите пароль <span class="auth-modal__required">*</span></span>
+            <input class="auth-modal__input" type="password" placeholder="••••••••" autocomplete="new-password">
+          </label>
+
+        </div>
+
+        <!-- Submit -->
+        <button class="auth-modal__submit" type="submit">Продолжить</button>
+
+        <!-- Disclaimer -->
+        <p class="auth-modal__disclaimer">
+          Продолжая, вы подтверждаете, что согласны войти в аккаунт Birtoll&amp;Co
+          и согласны на обработку персональных данных.
+        </p>
+
+        <!-- Divider -->
+        <div class="auth-modal__divider">
+          <span class="auth-modal__divider-line"></span>
+          <span class="auth-modal__divider-text">или</span>
+          <span class="auth-modal__divider-line"></span>
+        </div>
+
+        <!-- Social buttons -->
+        <div class="auth-modal__socials">
+
+          <button class="auth-modal__social-btn" type="button">
+            <img src="images/icons-svg/google-color.svg" alt="" class="auth-modal__social-icon">
+            Продолжить через Google
+          </button>
+
+          <button class="auth-modal__social-btn" type="button">
+            <img src="images/icons-svg/apple-ios.svg" alt="" class="auth-modal__social-icon">
+            Продолжить через Apple
+          </button>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ================================================
+       MAIN
+  ================================================= -->
+  <main>
+
+    <!-- ============================================
+         HERO SECTION
+    ============================================= -->
+    <section class="hero" aria-label="Главный баннер">
+      <div class="hero__container">
+
+        <!-- Left: Content -->
+        <div class="hero__content">
+
+          <h1 class="hero__title">
+            <span class="hero__title-line">NATURAL</span>
+            <span class="hero__title-line hero__title-line--accent">ENERGY.</span>
+            <span class="hero__title-line">BETTER YOU.</span>
+          </h1>
+
+          <p class="hero__description">
+            Премиальные органические продукты для здоровья,
+            энергии и баланса каждый день.
+          </p>
+
+          <a href="#" class="btn btn--primary hero__cta">
+            Перейти в магазин
+            <img src="images/icons-svg/bottom-arrow.svg" alt="">
+          </a>
+
+          <!-- Benefits Row -->
+          <div class="hero__benefits">
+
+            <div class="hero__benefit">
+              <img src="images/icons-svg/leaves.svg" alt="">
+              <span class="hero__benefit-label">100% Organic</span>
+            </div>
+
+            <div class="hero__benefit">
+              <img src="images/icons-svg/diamond.svg" alt="">
+              <span class="hero__benefit-label">Craft Quality</span>
+            </div>
+
+            <div class="hero__benefit">
+              <img src="images/icons-svg/eco.svg" alt="">
+              <span class="hero__benefit-label">Eco Packaging</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CATEGORIES SECTION
+    ============================================= -->
+    <section class="categories" aria-label="Категории товаров">
+      <div class="categories__container">
+
+        <h2 class="categories__title">Категории</h2>
+
+        <div class="categories__row">
+
+          <button class="categories__nav categories__nav--prev" id="catPrev"
+                  aria-label="Назад" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                 stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+
+          <div class="categories__track-wrap">
+            <div class="categories__track" id="catTrack">
+
+              <article class="category-card category-card--1">
+                <div class="category-card__image">
+                  <img src="images/dried-fruits.png" alt="Сухофрукты">
+                </div>
+                <div class="category-card__body">
+                  <h3 class="category-card__name">Сухофрукты & Чипсы</h3>
+                  <a href="#" class="category-card__btn">Смотреть</a>
+                </div>
+              </article>
+
+              <article class="category-card category-card--2">
+                <div class="category-card__image">
+                  <img src="images/oil.png" alt="Крафтовые масла">
+                </div>
+                <div class="category-card__body">
+                  <h3 class="category-card__name">Крафтовые масла</h3>
+                  <a href="#" class="category-card__btn">Смотреть</a>
+                </div>
+              </article>
+
+              <article class="category-card category-card--3">
+                <div class="category-card__image">
+                  <img src="images/flour.png" alt="Мука и Зерно">
+                </div>
+                <div class="category-card__body">
+                  <h3 class="category-card__name">Мука & Зерно</h3>
+                  <a href="#" class="category-card__btn">Смотреть</a>
+                </div>
+              </article>
+
+              <article class="category-card category-card--4">
+                <div class="category-card__image">
+                  <img src="images/matcha.png" alt="Матча и Убе">
+                </div>
+                <div class="category-card__body">
+                  <h3 class="category-card__name">Матча & Убе</h3>
+                  <a href="#" class="category-card__btn">Смотреть</a>
+                </div>
+              </article>
+
+              <article class="category-card category-card--5">
+                <div class="category-card__image">
+                  <img src="images/coffee.png" alt="Грибной кофе">
+                </div>
+                <div class="category-card__body">
+                  <h3 class="category-card__name">Грибной кофе</h3>
+                  <a href="#" class="category-card__btn">Смотреть</a>
+                </div>
+              </article>
+
+              <article class="category-card category-card--6">
+                <div class="category-card__image">
+                  <img src="images/nut-butter.png" alt="Ореховые пасты">
+                </div>
+                <div class="category-card__body">
+                  <h3 class="category-card__name">Ореховые пасты</h3>
+                  <a href="#" class="category-card__btn">Смотреть</a>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <button class="categories__nav categories__nav--next" id="catNext"
+                  aria-label="Вперёд">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                 stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+
+        </div>
+
+        <div class="categories__divider"></div>
+
+      </div>
+    </section>
+
+    <!-- ============================================
+         PRODUCTS SECTION
+    ============================================= -->
+    <section class="products" aria-label="Популярные товары">
+      <div class="products__container">
+
+        <div class="products__header">
+          <h2 class="products__title">Популярные товары</h2>
+          <a href="#" class="products__view-all">Смотреть все</a>
+        </div>
+
+        <div class="products__grid">
+
+          <article class="product-card product-card--1">
+            <div class="product-card__image">
+              <img src="images/popular-mushrooms-coffee.png" alt="Mushroom Coffee">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Mushroom Coffee</h3>
+              <p>Chaga & Lion's Mane</p>
+              <div class="product-card__footer">
+                <span class="product-card__price">€24.90</span>
+                <button class="product-card__wishlist" aria-label="В избранное">
+                  <img src="images/icons-svg/star.svg" alt="">
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card product-card--2">
+            <div class="product-card__image">
+              <img src="images/popular-matcha-latte.png" alt="Matcha Latte">
+              <span class="product-card__badge">NEW</span>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Matcha Latte</h3>
+              <p>Premium Create</p>
+              <div class="product-card__footer">
+                <span class="product-card__price">€19.90</span>
+                <button class="product-card__wishlist" aria-label="В избранное">
+                  <img src="images/icons-svg/star.svg" alt="">
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card product-card--3">
+            <div class="product-card__image">
+              <img src="images/popular-organic-oil.png" alt="Organic Oil">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Organic Black Cumin Oil</h3>
+              <p>Cold Pressed</p>
+              <div class="product-card__footer">
+                <span class="product-card__price">€14.90</span>
+                <button class="product-card__wishlist" aria-label="В избранное">
+                  <img src="images/icons-svg/star.svg" alt="">
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card product-card--4">
+            <div class="product-card__image">
+              <img src="images/popular-ashwagahnda.png" alt="Ashwagahnda Powder">
+              <span class="product-card__badge">NEW</span>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Ashwagandha Powder</h3>
+              <p>Adaptogenic</p>
+              <div class="product-card__footer">
+                <span class="product-card__price">€16.90</span>
+                <button class="product-card__wishlist" aria-label="В избранное">
+                  <img src="images/icons-svg/star.svg" alt="">
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card product-card--5">
+            <div class="product-card__image">
+              <img src="images/popular-tahini-paste.png" alt="Tahini Paste">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Tahini Paste</h3>
+              <p>100% Sesame</p>
+              <div class="product-card__footer">
+                <span class="product-card__price">€9.90</span>
+                <button class="product-card__wishlist" aria-label="В избранное">
+                  <img src="images/icons-svg/star.svg" alt="">
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Banner -->
+        <div class="products__banner">
+          <div class="products__banner-content">
+            <h3 class="products__banner-title">Mushroom Coffee</h3>
+            <p class="products__banner-text">Энергия, фокус и иммунитет<br>в каждой чашке</p>
+            <a href="#" class="products__banner-btn">Подробнее</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT SECTION
+    ============================================= -->
+    <section class="about" aria-label="О нас">
+      <div class="about__container">
+
+        <!-- Main: image + content -->
+        <div class="about__main">
+
+          <div class="about__image">
+            <img src="images/about-us-section.png" alt="green box birtoll&co">
+          </div>
+
+          <div class="about__content">
+            <span class="about__label">О нас</span>
+            <h2 class="about__title">Мы создаём продукты, которые делают вашу жизнь лучше</h2>
+            <p class="about__text">Birtoll&amp;Co — это больше, чем магазин. Это наш образ жизни и философия. Мы тщательно отбираем только натуральные, органические продукты со всего мира, чтобы вы могли чувствовать себя лучше каждый день.</p>
+            <a href="#" class="btn btn--primary">Узнать больше</a>
+          </div>
+
+        </div>
+
+        <!-- Features row -->
+        <div class="about__features">
+
+          <div class="about__feature">
+            <img src="images/icons-svg/about-us-icons-svg/leaf.svg" class="about__feature-icon" alt="">
+            <div class="about__feature-body">
+              <h4 class="about__feature-title">100% Органика</h4>
+              <p class="about__feature-text">Только натуральные ингредиенты</p>
+            </div>
+          </div>
+
+          <div class="about__feature">
+            <img src="images/icons-svg/about-us-icons-svg/gmo-free.svg" class="about__feature-icon" alt="">
+            <div class="about__feature-body">
+              <h4 class="about__feature-title">Без ГМО</h4>
+              <p class="about__feature-text">Чистые продукты без консервантов</p>
+            </div>
+          </div>
+
+          <div class="about__feature">
+            <img src="images/icons-svg/about-us-icons-svg/vegan.svg" class="about__feature-icon" alt="">
+            <div class="about__feature-body">
+              <h4 class="about__feature-title">Веган</h4>
+              <p class="about__feature-text">Подходит для веганов и вегетарианцев</p>
+            </div>
+          </div>
+
+          <div class="about__feature">
+            <img src="images/icons-svg/about-us-icons-svg/eco-pack.svg" class="about__feature-icon" alt="">
+            <div class="about__feature-body">
+              <h4 class="about__feature-title">Эко-упаковка</h4>
+              <p class="about__feature-text">Забота о природе в каждой детали</p>
+            </div>
+          </div>
+
+          <div class="about__feature">
+            <img src="images/icons-svg/about-us-icons-svg/quality.svg" class="about__feature-icon" alt="">
+            <div class="about__feature-body">
+              <h4 class="about__feature-title">Качество</h4>
+              <p class="about__feature-text">Премиальные продукты со всего мира</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================
+         REVIEWS SECTION
+    ============================================= -->
+    <section class="reviews">
+      <div class="reviews__container">
+
+        <div class="reviews__header">
+          <h2 class="reviews__title">Отзывы</h2>
+          <a href="#" class="reviews__view-all">Смотреть все</a>
+        </div>
+
+        <div class="reviews__row">
+
+          <button class="reviews__nav reviews__nav--prev" id="revPrev" aria-label="Назад" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                 stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+
+          <div class="reviews__track-wrap">
+            <div class="reviews__track" id="revTrack">
+
+              <article class="review-card">
+                <div class="review-card__stars">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                </div>
+                <p class="review-card__text">Идеальный грибной кофе! Даёт энергию без нервозности и отлично вкусит. Заказываю уже третий раз подряд.</p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">А</div>
+                  <div class="review-card__author-info">
+                    <span class="review-card__name">Алла К.</span>
+                    <span class="review-card__country">Germany</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__stars">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                </div>
+                <p class="review-card__text">Матча просто невероятная — яркий цвет, чистый вкус. Сразу чувствуется качество. Буду рекомендовать всем друзьям.</p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">М</div>
+                  <div class="review-card__author-info">
+                    <span class="review-card__name">Мария Л.</span>
+                    <span class="review-card__country">France</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__stars">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                </div>
+                <p class="review-card__text">Ореховая паста из фундука — лучшее, что я пробовал. Натуральный состав, без лишнего сахара. Упаковка тоже радует.</p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">Д</div>
+                  <div class="review-card__author-info">
+                    <span class="review-card__name">Дмитрий В.</span>
+                    <span class="review-card__country">Ukraine</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__stars">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                </div>
+                <p class="review-card__text">Сухофрукты свежие, без консервантов — это сразу ощущается. Доставка быстрая, всё упаковано аккуратно. Спасибо!</p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">С</div>
+                  <div class="review-card__author-info">
+                    <span class="review-card__name">София Р.</span>
+                    <span class="review-card__country">Italy</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__stars">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                  <img src="images/icons-svg/star-filled.svg" class="review-card__star" alt="">
+                </div>
+                <p class="review-card__text">Наконец нашла органические продукты, которым можно доверять. Состав честный, вкус натуральный. Birtoll — это любовь.</p>
+                <div class="review-card__author">
+                  <div class="review-card__avatar">Е</div>
+                  <div class="review-card__author-info">
+                    <span class="review-card__name">Елена Ф.</span>
+                    <span class="review-card__country">Netherlands</span>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <button class="reviews__nav reviews__nav--next" id="revNext" aria-label="Вперёд">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                 stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER
+  ============================================= -->
+  <footer class="footer">
+
+    <div class="footer__main">
+      <div class="footer__container">
+        <div class="footer__grid">
+
+          <!-- Col 1: Brand -->
+          <div class="footer__col footer__col--brand">
+            <img src="images/icons-svg/main-logo.png" class="footer__logo" alt="Birtoll &amp; Co">
+            <p class="footer__tagline">Премиальные органические продукты для здоровой и осознанной жизни</p>
+            <div class="footer__socials">
+              <a href="#" class="footer__social" aria-label="TikTok">
+                <img src="images/icons-svg/social-tiktok.svg" alt="">
+              </a>
+              <a href="#" class="footer__social" aria-label="Facebook">
+                <img src="images/icons-svg/social-facebook.svg" alt="">
+              </a>
+              <a href="#" class="footer__social" aria-label="Instagram">
+                <img src="images/icons-svg/social-instagram.svg" alt="">
+              </a>
+            </div>
+          </div>
+
+          <!-- Col 2: Information -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Информация</h4>
+            <ul class="footer__links">
+              <li><a href="#" class="footer__link">О нас</a></li>
+              <li><a href="#" class="footer__link">Доставка и оплата</a></li>
+              <li><a href="#" class="footer__link">Возврат</a></li>
+              <li><a href="#" class="footer__link">FAQ</a></li>
+              <li><a href="#" class="footer__link">Контакты</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Categories -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Категории</h4>
+            <ul class="footer__links">
+              <li><a href="#" class="footer__link">Грибной кофе</a></li>
+              <li><a href="#" class="footer__link">Матча &amp; Убе</a></li>
+              <li><a href="#" class="footer__link">Крафтовые масла</a></li>
+              <li><a href="#" class="footer__link">Сухофрукты</a></li>
+              <li><a href="#" class="footer__link">Чиа</a></li>
+              <li><a href="#" class="footer__link">Все категории</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Newsletter -->
+          <div class="footer__col footer__col--newsletter">
+            <h4 class="footer__col-title">Подпишитесь на новости</h4>
+            <p class="footer__newsletter-text">Получайте полезные материалы и специальные предложения</p>
+            <form class="footer__form" onsubmit="return false;">
+              <div class="footer__input-wrap">
+                <input type="email" class="footer__input" placeholder="Ваш e-mail" aria-label="Ваш e-mail">
+                <button type="submit" class="footer__submit" aria-label="Подписаться">
+                  <img src="images/icons-svg/send-plane.svg" alt="">
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer__bottom">
+      <div class="footer__container">
+        <div class="footer__bottom-inner">
+          <span class="footer__copy">&copy; 2025 Birtoll &amp; Co. Все права защищены.</span>
+          <div class="footer__legal">
+            <a href="#" class="footer__legal-link">Политика конфиденциальности</a>
+            <a href="#" class="footer__legal-link">Условия использования</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>
